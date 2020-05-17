@@ -1,0 +1,80 @@
+CHANGES IN VERSION 1.6-0.11  - Released 2018-06-08
+
+BUG FIX
+
+* Fix for Issue #12: RTriangle runs out of memory
+  https://github.com/davidcsterratt/RTriangle/issues/12
+  Thanks to Inma Soldado Magraner for reporting a problem in Retistruct that
+  leads to this error.
+
+CODE IMPROVEMENT
+
+* Fix for Issue #7: Potential anyDuplicated speed-up for pslg 
+  https://github.com/davidcsterratt/RTriangle/issues/7
+  Thanks to Michael Sumner for suggesting this improvement.
+
+CHANGES IN VERSION 1.6-0.10  - Released 2018-01-30
+
+BUG FIX
+
+* Fix for Issue #6: Array overrruns
+  https://github.com/davidcsterratt/RTriangle/issues/6
+  Thanks to Brian Ripley for reporting the bug.
+
+CHANGES IN VERSION 1.6-0.9  - Released 2017-07-13
+
+BUG FIXES
+
+* Fix for Issue #5: Crash under Windows i386 with particular PSLG
+  https://github.com/davidcsterratt/RTriangle/issues/5
+
+* Fix fof Issue #4: Found no calls to: 'R_registerRoutines',
+  'R_useDynamicSymbols'
+  https://github.com/davidcsterratt/RTriangle/issues/4
+
+CHANGES IN VERSION 1.6-0.8  - Released 2016-06-30
+
+BUG FIX
+
+* Fix for Issue #3: triangulate() does not triangulate a PSLG with two
+  holes correctly
+  (https://github.com/davidcsterratt/RTriangle/issues/3)
+  Thanks to Paolo Piras for reporting the bug.
+
+CHANGES IN VERSION 1.6-0.7  - Released 2016-05-10
+
+CODE IMPROVEMENTS
+
+* As per CRAN policies, the Authors@R field is now used.
+
+* More tests of triangulate() using testthat
+
+BUG FIXES
+
+* Fix for Issue #1: Small values of a (1e-7 and below) not registered
+  (https://github.com/davidcsterratt/RTriangle/pull/1 &
+   https://github.com/davidcsterratt/RTriangle/pull/2 )
+  Thanks to Elias Pipping for finding the bug and providing the fix.
+
+CHANGES IN VERSION 1.6-0.6  - Released 2014-08-08
+
+LICENCE CHANGE
+
+* The licence has changed from a combination of GPL-2 (for R code) and
+  Schewchuk's Triangle licence to CC BY-NC-SA 4.0. This change was
+  prompted by the CRAN maintainers and is due to Schewchuk's licence
+  not being a FOSS licence.
+
+BUG FIXES
+
+* Fix for Issue #2358: 	RTriangle_1.6-0.5.tar.gz does not pass 'R CMD check' on Windows	
+  (https://r-forge.r-project.org/tracker/index.php?func=detail&aid=2358&group_id=1077&atid=4271)
+  Thanks to Uwe Ligges for alerting me to this.
+  
+NEW FEATURES
+
+* CITATION file added
+
+* NEWS file added
+
+* ChangeLog added

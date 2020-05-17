@@ -1,0 +1,70 @@
+* installing *source* package ‘RTriangle’ ...
+** using staged installation
+** libs
+clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -include RTriangle.h  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c RTriangle_init.c -o RTriangle_init.o
+clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -include RTriangle.h  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c interface.c -o interface.o
+clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -include RTriangle.h  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c triangle.c -o triangle.o
+triangle.c:15745:17: warning: incompatible pointer types passing 'int *' to parameter of type 'long *' [-Wincompatible-pointer-types]
+                in->pointmarkerlist, in->numberofpoints,
+                ^~~~~~~~~~~~~~~~~~~
+triangle.c:15763:38: warning: incompatible pointer types passing 'int *' to parameter of type 'long *' [-Wincompatible-pointer-types]
+    m.hullsize = reconstruct(&m, &b, in->trianglelist,
+                                     ^~~~~~~~~~~~~~~~
+triangle.c:15767:30: warning: incompatible pointer types passing 'int *' to parameter of type 'long *' [-Wincompatible-pointer-types]
+                             in->segmentlist, in->segmentmarkerlist,
+                             ^~~~~~~~~~~~~~~
+triangle.c:15767:47: warning: incompatible pointer types passing 'int *' to parameter of type 'long *' [-Wincompatible-pointer-types]
+                             in->segmentlist, in->segmentmarkerlist,
+                                              ^~~~~~~~~~~~~~~~~~~~~
+triangle.c:15802:28: warning: incompatible pointer types passing 'int *' to parameter of type 'long *' [-Wincompatible-pointer-types]
+      formskeleton(&m, &b, in->segmentlist,
+                           ^~~~~~~~~~~~~~~
+triangle.c:15803:20: warning: incompatible pointer types passing 'int *' to parameter of type 'long *' [-Wincompatible-pointer-types]
+                   in->segmentmarkerlist, in->numberofsegments);
+                   ^~~~~~~~~~~~~~~~~~~~~
+triangle.c:15919:16: warning: incompatible pointer types passing 'int **' to parameter of type 'long **' [-Wincompatible-pointer-types]
+               &out->pointmarkerlist);
+               ^~~~~~~~~~~~~~~~~~~~~
+triangle.c:15934:27: warning: incompatible pointer types passing 'int **' to parameter of type 'long **' [-Wincompatible-pointer-types]
+    writeelements(&m, &b, &out->trianglelist, &out->triangleattributelist);
+                          ^~~~~~~~~~~~~~~~~~
+triangle.c:15953:25: warning: incompatible pointer types passing 'int **' to parameter of type 'long **' [-Wincompatible-pointer-types]
+      writepoly(&m, &b, &out->segmentlist, &out->segmentmarkerlist);
+                        ^~~~~~~~~~~~~~~~~
+triangle.c:15953:44: warning: incompatible pointer types passing 'int **' to parameter of type 'long **' [-Wincompatible-pointer-types]
+      writepoly(&m, &b, &out->segmentlist, &out->segmentmarkerlist);
+                                           ^~~~~~~~~~~~~~~~~~~~~~~
+triangle.c:15984:24: warning: incompatible pointer types passing 'int **' to parameter of type 'long **' [-Wincompatible-pointer-types]
+    writeedges(&m, &b, &out->edgelist, &out->edgemarkerlist);
+                       ^~~~~~~~~~~~~~
+triangle.c:15984:40: warning: incompatible pointer types passing 'int **' to parameter of type 'long **' [-Wincompatible-pointer-types]
+    writeedges(&m, &b, &out->edgelist, &out->edgemarkerlist);
+                                       ^~~~~~~~~~~~~~~~~~~~
+triangle.c:15992:18: warning: incompatible pointer types passing 'int **' to parameter of type 'long **' [-Wincompatible-pointer-types]
+                 &vorout->pointmarkerlist, &vorout->edgelist,
+                 ^~~~~~~~~~~~~~~~~~~~~~~~
+triangle.c:15992:44: warning: incompatible pointer types passing 'int **' to parameter of type 'long **' [-Wincompatible-pointer-types]
+                 &vorout->pointmarkerlist, &vorout->edgelist,
+                                           ^~~~~~~~~~~~~~~~~
+triangle.c:15993:18: warning: incompatible pointer types passing 'int **' to parameter of type 'long **' [-Wincompatible-pointer-types]
+                 &vorout->edgemarkerlist, &vorout->normlist);
+                 ^~~~~~~~~~~~~~~~~~~~~~~
+triangle.c:16000:28: warning: incompatible pointer types passing 'int **' to parameter of type 'long **' [-Wincompatible-pointer-types]
+    writeneighbors(&m, &b, &out->neighborlist);
+                           ^~~~~~~~~~~~~~~~~~
+16 warnings generated.
+clang -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o RTriangle.so RTriangle_init.o interface.o triangle.o -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+ld: warning: ld: warning: URGENT: building for OSX, but linking against dylib (/usr/lib/libSystem.dylib) built for (unknown). Note: This will be an error in the future.URGENT: building for OSX, but linking against dylib (/System/Library/Frameworks//CoreFoundation.framework/CoreFoundation) built for (unknown). Note: This will be an error in the future.
+
+installing to /Users/leleshu/Dropbox/SHUD/github/RT/RTriangle.Rcheck/00LOCK-RTriangle/00new/RTriangle/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (RTriangle)

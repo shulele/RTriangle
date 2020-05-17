@@ -1,0 +1,17 @@
+* installing *source* package ‘RTriangle’ ...
+** using staged installation
+** libs
+clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -include RTriangle.h  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c RTriangle_init.c -o RTriangle_init.o
+clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -include RTriangle.h  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c interface.c -o interface.o
+clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -include RTriangle.h  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c triangle.c -o triangle.o
+clang -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o RTriangle.so RTriangle_init.o interface.o triangle.o -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+installing to /Users/leleshu/Dropbox/SHUD/github/RT/RTriangle.Rcheck/00LOCK-RTriangle/00new/RTriangle/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+Error : package or namespace load failed for ‘RTriangle’ in loadNamespace(package, lib.loc):
+ cyclic namespace dependency detected when loading ‘RTriangle’, already loading ‘RTriangle’
+Error: unable to load R code in package ‘RTriangle’
+Execution halted
+ERROR: lazy loading failed for package ‘RTriangle’
+* removing ‘/Users/leleshu/Dropbox/SHUD/github/RT/RTriangle.Rcheck/RTriangle’

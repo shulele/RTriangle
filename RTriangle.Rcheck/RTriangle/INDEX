@@ -1,0 +1,8 @@
+RTriangle-package       Generate 2D Quality meshes and constrained
+                        Delaunay triangulations
+plot.pslg               Plot pslg object
+plot.triangulation      Plot a triangulation object produced with
+                        triangulate
+pslg                    Create a Planar Straight Line Graph object
+read.pslg               Read a Planar Straight Line Graph from file
+triangulate             Triangulate a Planar Straight Line Graph

@@ -1,0 +1,57 @@
+
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(testthat)
+> 
+> test_check("RTriangle")
+Loading required package: RTriangle
+[31m──[39m [31m1. Failure: triangulate can trianglulate a square (@test-tria[39m
+`areas` not equal to c(0.5, 0.5).
+2/2 mismatches (average diff: 0.5)
+[1] 0 - 0.5 == -0.5
+[2] 0 - 0.5 == -0.5
+
+[31m──[39m [31m2. Failure: triangulate can trianglulate a square (@test-tria[39m
+sum(areas) not equal to 1.
+1/1 mismatches
+[1] 0.507 - 1 == -0.493
+
+[31m──[39m [31m3. Failure: triangulate can trianglulate an object with a con[39m
+sum(areas) not equal to 0.75.
+1/1 mismatches
+[1] 0 - 0.75 == -0.75
+
+[31m──[39m [31m4. Failure: triangulate can triangulate an example that would[39m
+nrow(P) + 10000 not equal to nrow(tri$P).
+1/1 mismatches
+[1] 10469 - 469 == 10000
+
+[31m──[39m [31m5. Failure: triangulate can triangulate an example that would[39m
+nrow(P) + 100 not equal to nrow(tri$P).
+1/1 mismatches
+[1] 569 - 469 == 100
+
+══ testthat results  ═══════════════════════════════════════════
+[ OK: 10 | SKIPPED: 2 | WARNINGS: 6 | FAILED: 5 ]
+1. Failure: triangulate can trianglulate a square (@test-triangulate.R#17) 
+2. Failure: triangulate can trianglulate a square (@test-triangulate.R#22) 
+3. Failure: triangulate can trianglulate an object with a concavity subject to a minimum area constraint (@test-triangulate.R#33) 
+4. Failure: triangulate can triangulate an example that would create infinite numbers of Steiner points and lead to a crash (@test-triangulate.R#107) 
+5. Failure: triangulate can triangulate an example that would create infinite numbers of Steiner points and lead to a crash (@test-triangulate.R#111) 
+
+Error: testthat unit tests failed
+Execution halted
